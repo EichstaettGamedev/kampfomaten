@@ -42,7 +42,7 @@ SchriftGroesse    = 24
 
 font = pygame.font.SysFont(None, SchriftGroesse)
 
-window = pygame.display.set_mode([FensterBreite, FensterHoehe])
+window = pygame.display.set_mode((FensterBreite, FensterHoehe))
 while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite

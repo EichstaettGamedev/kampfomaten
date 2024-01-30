@@ -18,7 +18,7 @@ SpielerGeschwindigkeit = 4
 SpielerAY = FensterHoehe/2 - SpielerHoehe/2
 SpielerBY = FensterHoehe/2 - SpielerHoehe/2
 
-window = pygame.display.set_mode([FensterBreite, FensterHoehe])
+window = pygame.display.set_mode((FensterBreite, FensterHoehe))
 while True:
     # Anstelle des Kreises zeichnen wir jetzt 2 Rechtecke, das ist beim Linken Spieler einfach
     SpielerAX = SpielerAbstand

@@ -2,7 +2,7 @@
 
 # Um pygame benutzen zu koennen muessen wir es zuallererst importieren, falls pygame nicht gefunden wird kannst du es per `pip install pygame` installieren
 import pygame
-# Jetzt muss es noch initialisiert werden
+# Jetzt muss pygame noch initialisiert werden
 pygame.init()
 
 # Und noch ein paar Konstanten damit die Formeln verstaendlicher sind
@@ -10,7 +10,7 @@ FensterBreite  = 640
 FensterHoehe   = 480
 
 # Hier oeffnen wir ein neues Fenster welches 640x480 Pixel gross ist
-window = pygame.display.set_mode([FensterBreite, FensterHoehe])
+window = pygame.display.set_mode((FensterBreite, FensterHoehe))
 
 # Dies ist unsere Hauptschleife in der wir konstant das Fenster neu zeichnen und schauen welche Tasten der Spieler drueckt
 while True:

@@ -36,7 +36,7 @@ SchriftGroesse    = 24
 # Damit wir die Punktezahlen zeichen koennen muessen wir zuerst einen Font laden
 font = pygame.font.SysFont(None, SchriftGroesse)
 
-window = pygame.display.set_mode([FensterBreite, FensterHoehe])
+window = pygame.display.set_mode((FensterBreite, FensterHoehe))
 while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite

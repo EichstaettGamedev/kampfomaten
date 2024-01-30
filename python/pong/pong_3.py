@@ -27,7 +27,7 @@ BallY = FensterHoehe/2
 BallXGeschwindigkeit = BallXStartGeschwindigkeit
 BallYGeschwindigkeit = BallYStartGeschwindigkeit
 
-window = pygame.display.set_mode([FensterBreite, FensterHoehe])
+window = pygame.display.set_mode((FensterBreite, FensterHoehe))
 while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite
