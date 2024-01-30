@@ -31,7 +31,7 @@ SpielerBPunkte = 0
 
 # Und noch ein paar Konstanten
 PunkteRandAbstand = 16
-SchriftGroesse    = 24
+SchriftGroesse    = 48
 
 # Damit wir die Punktezahlen zeichen koennen muessen wir zuerst einen Font laden
 font = pygame.font.SysFont(None, SchriftGroesse)

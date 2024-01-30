@@ -46,7 +46,7 @@ SpielerAPunkte = 0
 SpielerBPunkte = 0
 
 PunkteRandAbstand = 16
-SchriftGroesse    = 24
+SchriftGroesse    = 48
 
 font = pygame.font.SysFont(None, SchriftGroesse)
 
