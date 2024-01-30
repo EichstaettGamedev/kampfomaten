@@ -7,12 +7,6 @@ import pygame
 pygame.init()
 clock = pygame.time.Clock()
 
-WEISS   = (255,255,255)
-SCHWARZ = (  0,  0,  0)
-ROT     = (255,  0,  0)
-GRUEN   = (  0,255,  0)
-BLAU    = (  0,  0,255)
-
 FensterBreite  = 640
 FensterHoehe   = 480
 FPS            = 60
@@ -43,23 +37,22 @@ SchriftGroesse    = 24
 font = pygame.font.SysFont(None, SchriftGroesse)
 
 window = pygame.display.set_mode([FensterBreite, FensterHoehe])
-running = True
-while running:
+while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite
     SpielerA  = pygame.Rect(SpielerAX, SpielerAY, SpielerBreite, SpielerHoehe)
     SpielerB  = pygame.Rect(SpielerBX, SpielerBY, SpielerBreite, SpielerHoehe)
 
-    window.fill(SCHWARZ)
-    pygame.draw.rect(window,  BLAU, SpielerA)
-    pygame.draw.rect(window, GRUEN, SpielerB)
+    window.fill(pygame.Color('black'))
+    pygame.draw.rect(window, pygame.Color( 'blue'), SpielerA)
+    pygame.draw.rect(window, pygame.Color('green'), SpielerB)
 
     BallPosition = (BallX, BallY)
-    pygame.draw.circle(window, ROT, BallPosition, BallRadius)
+    pygame.draw.circle(window, pygame.Color('red'), BallPosition, BallRadius)
 
-    SpielerAText = font.render(str(SpielerAPunkte), True, WEISS)
+    SpielerAText = font.render(str(SpielerAPunkte), True, pygame.Color('white'))
     window.blit(SpielerAText, (PunkteRandAbstand, PunkteRandAbstand))
-    SpielerBText = font.render(str(SpielerBPunkte), True, WEISS)
+    SpielerBText = font.render(str(SpielerBPunkte), True, pygame.Color('white'))
     window.blit(SpielerBText, (FensterBreite - PunkteRandAbstand - 16, PunkteRandAbstand))
 
     pygame.display.flip()
@@ -111,5 +104,5 @@ while running:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            exit()
 

@@ -5,16 +5,6 @@ import pygame
 # Jetzt muss es noch initialisiert werden
 pygame.init()
 
-# Zuerst definieren wir ein paar Farben um den Code etwas leserlicher zu machen
-# Diese werden am Computer ueblicherweise als RGB Werte angegeben.
-# Dies sind 3 Zahlen welche angeben wieviel Rot, Gruen und Blau die Farbe hat.
-# In pygame sollte jede diese Zahlen zwischen 0 und 255 liegen
-WEISS   = (255,255,255)
-SCHWARZ = (  0,  0,  0)
-ROT     = (255,  0,  0)
-GRUEN   = (  0,255,  0)
-BLAU    = (  0,  0,255)
-
 # Und noch ein paar Konstanten damit die Formeln verstaendlicher sind
 FensterBreite  = 640
 FensterHoehe   = 480
@@ -22,15 +12,12 @@ FensterHoehe   = 480
 # Hier oeffnen wir ein neues Fenster welches 640x480 Pixel gross ist
 window = pygame.display.set_mode([FensterBreite, FensterHoehe])
 
-# Um das Spiel zu beenden muss running dann spaeter auf False gesetzt werden
-running = True
-
 # Dies ist unsere Hauptschleife in der wir konstant das Fenster neu zeichnen und schauen welche Tasten der Spieler drueckt
-while running:
+while True:
     # Zuerst malen wir den Hintergrund
-    window.fill(SCHWARZ)
+    window.fill(pygame.Color('black'))
     # Dann einen Kreis in die Mitte des Fensters
-    pygame.draw.circle(window, BLAU, (FensterBreite/2, FensterHoehe/2), 50)
+    pygame.draw.circle(window, pygame.Color('blue'), (FensterBreite/2, FensterHoehe/2), 50)
     # Zum Schluss muessen wir noch flip aufrufen damit wir etwas sehen
     pygame.display.flip()
 
@@ -38,8 +25,9 @@ while running:
     for event in pygame.event.get():
         # Hier pruefen wir die Art des Ereignisses, QUIT bedeutet das der Nutzer das Spiel beenden moechte (z.B. durch Alt-F4 oder klick aufs X oben rechts)
         if event.type == pygame.QUIT:
-            # Jetzt setzen wir die Variabel auf False wodurch die while schleife beendet wird
-            running = False
+            # Mit der exit funktion koennen wir das Programm nun sofort beenden
+            exit()
+
 
 # Uebungsaufgaben
 # 1. Veraendere das Programm, so dass der Hintergrund Weiss und nicht Schwarz ist

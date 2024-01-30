@@ -5,12 +5,6 @@ pygame.init()
 # Damit das Spiel auf allen Computern gleich schnell laeuft brauchen wir eine Uhr
 clock = pygame.time.Clock()
 
-WEISS   = (255,255,255)
-SCHWARZ = (  0,  0,  0)
-ROT     = (255,  0,  0)
-GRUEN   = (  0,255,  0)
-BLAU    = (  0,  0,255)
-
 FensterBreite  = 640
 FensterHoehe   = 480
 # Zuerst ein paar Konstanten damit die folgenden Formeln klarer werden
@@ -25,8 +19,7 @@ SpielerAY = FensterHoehe/2 - SpielerHoehe/2
 SpielerBY = FensterHoehe/2 - SpielerHoehe/2
 
 window = pygame.display.set_mode([FensterBreite, FensterHoehe])
-running = True
-while running:
+while True:
     # Anstelle des Kreises zeichnen wir jetzt 2 Rechtecke, das ist beim Linken Spieler einfach
     SpielerAX = SpielerAbstand
 
@@ -40,9 +33,9 @@ while running:
     SpielerA  = pygame.Rect(SpielerAX, SpielerAY, SpielerBreite, SpielerHoehe)
     SpielerB  = pygame.Rect(SpielerBX, SpielerBY, SpielerBreite, SpielerHoehe)
     # Und zeichen nun den Bildschirm
-    window.fill(SCHWARZ)
-    pygame.draw.rect(window,  BLAU, SpielerA)
-    pygame.draw.rect(window, GRUEN, SpielerB)
+    window.fill(pygame.Color('black'))
+    pygame.draw.rect(window, pygame.Color( 'blue'), SpielerA)
+    pygame.draw.rect(window, pygame.Color('green'), SpielerB)
 
     pygame.display.flip()
     # Hier limitieren wir das Spiel auf 60 Bilder die Sekunde, ansonsten wird das Spiel viel zu schnell sein
@@ -65,5 +58,5 @@ while running:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            exit()
 

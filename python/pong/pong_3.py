@@ -4,12 +4,6 @@ import pygame
 pygame.init()
 clock = pygame.time.Clock()
 
-WEISS   = (255,255,255)
-SCHWARZ = (  0,  0,  0)
-ROT     = (255,  0,  0)
-GRUEN   = (  0,255,  0)
-BLAU    = (  0,  0,255)
-
 FensterBreite  = 640
 FensterHoehe   = 480
 FPS            = 60
@@ -34,19 +28,18 @@ BallXGeschwindigkeit = BallXStartGeschwindigkeit
 BallYGeschwindigkeit = BallYStartGeschwindigkeit
 
 window = pygame.display.set_mode([FensterBreite, FensterHoehe])
-running = True
-while running:
+while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite
     SpielerA  = pygame.Rect(SpielerAX, SpielerAY, SpielerBreite, SpielerHoehe)
     SpielerB  = pygame.Rect(SpielerBX, SpielerBY, SpielerBreite, SpielerHoehe)
 
-    window.fill(SCHWARZ)
-    pygame.draw.rect(window,  BLAU, SpielerA)
-    pygame.draw.rect(window, GRUEN, SpielerB)
+    window.fill(pygame.Color('black'))
+    pygame.draw.rect(window, pygame.Color( 'blue'), SpielerA)
+    pygame.draw.rect(window, pygame.Color('green'), SpielerB)
     # Jetzt muessen wir noch den Ball Malen
     BallPosition = (BallX, BallY)
-    pygame.draw.circle(window, ROT, BallPosition, BallRadius)
+    pygame.draw.circle(window, pygame.Color('red'), BallPosition, BallRadius)
 
     pygame.display.flip()
     clock.tick(FPS)
@@ -95,5 +88,5 @@ while running:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            exit()
 
