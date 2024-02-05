@@ -19,6 +19,7 @@ SpielerAY = FensterHoehe/2 - SpielerHoehe/2
 SpielerBY = FensterHoehe/2 - SpielerHoehe/2
 
 window = pygame.display.set_mode((FensterBreite, FensterHoehe))
+pygame.display.set_caption('Pong')
 while True:
     # Anstelle des Kreises zeichnen wir jetzt 2 Rechtecke, das ist beim Linken Spieler einfach
     SpielerAX = SpielerAbstand

@@ -28,6 +28,7 @@ BallXGeschwindigkeit = BallXStartGeschwindigkeit
 BallYGeschwindigkeit = BallYStartGeschwindigkeit
 
 window = pygame.display.set_mode((FensterBreite, FensterHoehe))
+pygame.display.set_caption('Pong')
 while True:
     SpielerAX = SpielerAbstand
     SpielerBX = FensterBreite - SpielerAbstand - SpielerBreite

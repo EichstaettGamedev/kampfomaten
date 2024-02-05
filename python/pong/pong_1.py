@@ -11,6 +11,8 @@ FensterHoehe   = 480
 
 # Hier oeffnen wir ein neues Fenster welches 640x480 Pixel gross ist
 window = pygame.display.set_mode((FensterBreite, FensterHoehe))
+# Und jetzt setzen wir den Fenstertitel
+pygame.display.set_caption('Pong')
 
 # Dies ist unsere Hauptschleife in der wir konstant das Fenster neu zeichnen und schauen welche Tasten der Spieler drueckt
 while True:
